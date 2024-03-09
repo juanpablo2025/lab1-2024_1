@@ -1,4 +1,4 @@
-package org.tp24.Entity;
+package org.tp24.entity;
 
 import java.time.LocalDate;
 

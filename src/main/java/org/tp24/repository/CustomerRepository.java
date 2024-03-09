@@ -1,6 +1,6 @@
 package org.tp24.repository;
 
-import org.tp24.Entity.Customer;
+import org.tp24.entity.Customer;
 import org.tp24.excepcion.CustomerNoFoundException;
 import org.tp24.excepcion.CustomerIdNoFoundException;
 import org.tp24.excepcion.MaxQuotaNoFoundException;
