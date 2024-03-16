@@ -8,8 +8,9 @@ import org.tp24.excepcion.MaxQuotaNoFoundException;
 import java.util.List;
 
 public interface CustomerRepository {
-    List<Customer> findByNameAndLastname(String name, String lastname);
-    List<Customer> findByMaxQuota(double maxQuota);
-    Customer findByCustomerId(String document);
+    List<Customer> findByNameAndLastname(String name, String lastname) throws CustomerNoFoundException;
+    List<Customer> findByMaxQuota(double maxQuota) throws MaxQuotaNoFoundException;
+    Customer findByCustomerId(String document) throws CustomerIdNoFoundException;
+
 }
 

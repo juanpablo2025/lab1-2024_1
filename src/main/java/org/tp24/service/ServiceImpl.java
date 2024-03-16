@@ -15,7 +15,7 @@ public class ServiceImpl {
         this.customerRepository = customerRepository;
     }
 
-    public List<Customer> findCustomersByNameAndLastname(String name, String lastname) throws CustomerNoFoundException{
+    public List<Customer> findByNameAndLastname(String name, String lastname) throws CustomerNoFoundException {
         try {
             return customerRepository.findByNameAndLastname(name, lastname);
         } catch (CustomerNoFoundException e) {
@@ -23,7 +23,7 @@ public class ServiceImpl {
         }
     }
 
-    public List<Customer> findCustomersByMaxQuota(double maxQuota) throws MaxQuotaNoFoundException {
+    public List<Customer> findByMaxQuota(double maxQuota) throws MaxQuotaNoFoundException {
         try {
             return customerRepository.findByMaxQuota(maxQuota);
         } catch (MaxQuotaNoFoundException e) {
@@ -31,7 +31,7 @@ public class ServiceImpl {
         }
     }
 
-    public Customer findCustomerByCustomerId(String document) throws CustomerIdNoFoundException {
+    public Customer findByCustomerId(String document) throws CustomerIdNoFoundException {
         try {
             return customerRepository.findByCustomerId(document);
         } catch (CustomerIdNoFoundException e) {
