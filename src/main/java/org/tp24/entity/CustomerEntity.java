@@ -2,7 +2,7 @@ package org.tp24.entity;
 
 import java.time.LocalDate;
 
-public class Customer {
+public class CustomerEntity {
     private String document;
     private String name;
     private String lastname;
@@ -10,7 +10,7 @@ public class Customer {
     private String address;
     private double maxQuota;
 
-    public Customer(String document, String name, String Lastname, LocalDate birthdate, String address, double maxQuota) {
+    public CustomerEntity(String document, String name, String Lastname, LocalDate birthdate, String address, double maxQuota) {
         this.document = document;
         this.name = name;
         this.lastname = Lastname;
