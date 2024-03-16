@@ -11,7 +11,6 @@ import java.util.List;
 public class ServiceImpl {
     private final CustomerRepository customerRepository;
 
-
     public ServiceImpl(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
     }
@@ -32,11 +31,11 @@ public class ServiceImpl {
         }
     }
 
-    public Customer findCustomerByCustomerId(String document) throws MaxQuotaNoFoundException {
+    public Customer findCustomerByCustomerId(String document) throws CustomerIdNoFoundException {
         try {
             return customerRepository.findByCustomerId(document);
         } catch (CustomerIdNoFoundException e) {
-            throw new CustomerNoFoundException("No se encontró ningún cliente con el número de identificación especificado");
+            throw new CustomerIdNoFoundException("No se encontró ningún cliente con el número de identificación especificado");
         }
     }
 }
