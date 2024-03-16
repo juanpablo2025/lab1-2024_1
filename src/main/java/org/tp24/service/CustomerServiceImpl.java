@@ -13,7 +13,7 @@ public class CustomerServiceImpl {
         this.customerRepository = customerRepository;
     }
 
-    public List<CustomerEntity> findByNameAndLastname(String name, String lastname) throws CustomerException {
+    public CustomerEntity findByNameAndLastname(String name, String lastname) throws CustomerException {
         try {
             return customerRepository.findByNameAndLastname(name, lastname);
         } catch (CustomerException e) {
