@@ -1,9 +1,7 @@
 package org.tp24.service;
 
 import org.tp24.entity.Customer;
-import org.tp24.excepcion.CustomerIdNoFoundException;
 import org.tp24.excepcion.CustomerNoFoundException;
-import org.tp24.excepcion.MaxQuotaNoFoundException;
 import org.tp24.repository.CustomerRepository;
 
 import java.util.List;
@@ -23,19 +21,19 @@ public class ServiceImpl {
         }
     }
 
-    public List<Customer> findByMaxQuota(double maxQuota) throws MaxQuotaNoFoundException {
+    public List<Customer> findByMaxQuota(double maxQuota) throws CustomerNoFoundException {
         try {
             return customerRepository.findByMaxQuota(maxQuota);
-        } catch (MaxQuotaNoFoundException e) {
-            throw new MaxQuotaNoFoundException("No se encontraron clientes con cupos máximos iguales o superiores al valor especificado");
+        } catch (CustomerNoFoundException e) {
+            throw new CustomerNoFoundException("No se encontraron clientes con cupos máximos iguales o superiores al valor especificado");
         }
     }
 
-    public Customer findByCustomerId(String document) throws CustomerIdNoFoundException {
+    public Customer findByCustomerId(String document) throws CustomerNoFoundException {
         try {
             return customerRepository.findByCustomerId(document);
-        } catch (CustomerIdNoFoundException e) {
-            throw new CustomerIdNoFoundException("No se encontró ningún cliente con el número de identificación especificado");
+        } catch (CustomerNoFoundException e) {
+            throw new CustomerNoFoundException("No se encontró ningún cliente con el número de identificación especificado");
         }
     }
 }
